@@ -60,7 +60,7 @@ hook Notice::policy(n: Notice::Info)
         return;
 
     local duration = get_duration(n);
-    local tool = fmt("%s/%s", @DIR, tool_filename);
+    local tool = tool_filename;
 
     add n$actions[ACTION_BHR];
 
