@@ -20,7 +20,7 @@ export {
         latency:    interval &log;
     };
 
-    const tool_filename = "/home/zeek/bhr_client_venv/bin/bhr-zeek" &redef; #so bhr-bro.pex can be used instead
+    const tool_filename = "/home/zeek/bhr_client_venv/bin/bhr-zeek" &redef; #so bhr-zeek.pex can be used instead
     const mode = "queue" &redef; #or block
     const block_types: set[Notice::Type] = {} &redef;
     const default_block_duration: interval = 15mins &redef;
