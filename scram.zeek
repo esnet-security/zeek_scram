@@ -1,9 +1,9 @@
-##! Add notice action ACTION_BHR that will BHR n$src
-module BHR;
+##! Add notice action ACTION_SCRAM that will BHR n$src
+module SCRAM;
 
 export {
     redef enum Notice::Action += {
-        ACTION_BHR,
+        ACTION_SCRAM,
     };
 
     redef enum Log::ID += { LOG };
@@ -20,7 +20,7 @@ export {
         latency:    interval &log;
     };
 
-    const tool_filename = "/home/zeek/bhr_client_venv/bin/bhr-zeek" &redef; #so bhr-zeek.pex can be used instead
+    const tool_filename = "/home/zeek/scram_client_venv/bin/scram-zeek" &redef;
     const mode = "queue" &redef; #or block
     const block_types: set[Notice::Type] = {} &redef;
     const default_block_duration: interval = 15mins &redef;
@@ -62,7 +62,7 @@ hook Notice::policy(n: Notice::Info)
     local duration = get_duration(n);
     local tool = tool_filename;
 
-    add n$actions[ACTION_BHR];
+    add n$actions[ACTION_SCRAM];
 
     local nsub = n?$sub ? n$sub : "-";
     local duration_str = cat(interval_to_double(duration));
