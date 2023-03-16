@@ -20,7 +20,7 @@ export {
         latency:    interval &log;
     };
 
-    const tool_filename = "/home/zeek/scram_client_venv/bin/scram-zeek" &redef;
+    const tool_filename = "/home/zeek/scram_client_venv/bin/scram-client" &redef;
     const mode = "queue" &redef; #or block
     const block_types: set[Notice::Type] = {} &redef;
     const default_block_duration: interval = 15mins &redef;
