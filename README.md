@@ -3,7 +3,7 @@ Zeek Integration for SCRAM
 
 This code was heavily adopted from NCSA's zeek_bhr.
 
-Requires the scram-zeek python module.
+Requires the scram-client python module.
 
 Usage
 -----
