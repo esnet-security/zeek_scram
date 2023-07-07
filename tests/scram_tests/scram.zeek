@@ -12,6 +12,7 @@ export {
 
 event zeek_init() &priority=-5 {
         local block_ip: addr = 10.1.1.1;
+	delete Site::local_nets[10.0.0.0/8];
 
         NOTICE([$note=SCRAM_TEST::Test_Scram, $src=block_ip,
                 $msg=fmt("SCRAM Test"),$identifier=fmt("SCRAM")]);
